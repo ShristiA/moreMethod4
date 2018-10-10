@@ -7,22 +7,26 @@ public class Main {
   calculate average
  */
     public static void main(String[] args) {
+        Integer userInput;
         Scanner sc = new Scanner(System.in);
-        System.out.println("Enter 1 numbers");
-        int num1 = sc.nextInt();
-        System.out.println("Enter 2 numbers");
-        int num2 = sc.nextInt();
-        System.out.println("Enter 3 numbers");
-        int num3 = sc.nextInt();
-
-        int avg = methodAverage(num1,num2,num3);
-        System.out.print("Average "+avg);
-
+        ArrayList <Integer> al = new ArrayList<>();
+        System.out.println("Enter numbers");
+        for(int i =0; i<3; i++){
+            userInput = sc.nextInt();
+            al.add(userInput);
         }
-        public static int methodAverage(int num1,int num2,int num3){
-        int total = num1+num2+num3;
-        int average = total/3;
-        return average;
+        int average = methodAverag(al);
+                System.out.println(average);
 
+
+
+    }
+    public static int methodAverag(ArrayList<Integer> al){
+        int total = 0;
+        for(Integer number : al) {
+            total = number +total;
+            }
+        int avg = total / al.size();
+        return avg;
     }
 }
